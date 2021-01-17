@@ -1,0 +1,44 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+    <header  style = "background:rgb(45, 150, 57)" class="jumbotron">
+        <div class = "container">
+			<center>
+            	<h1>Welcome to Fortune Bank</h1>
+            	<p>The best banking websites for transfering and reciveing money</p>
+            	<p>
+                	<a class="btn btn-dark btn-large" href="/allcustomers/new">Click to add a new user to our Bank</a>
+            	</p>
+			</center>	
+        </div>
+	</header>
+	
+    
+    <div class="row" style="display:flex; flex-wrap:wrap;">
+        <% customers.forEach(function(customers){ %>
+													   		
+				<div class="col md-3 col sm-6" style="padding-bottom: 2rem;">
+					
+					<div class="card" style="width: 18rem;">
+						<div class="im">
+							<img src="<%=customers.image %>" class="card-img-top" alt="..." style="height: 20rem; object-fit: cover;" >
+						</div>
+  						
+  						<div class="card-body">
+							<h5 class="card-title"><%=customers.name %></h5>
+							<h5> id: <%= customers.id %></h5>
+    						<a href= `allcustomers/itempage/<%= customers.id%>`>View full</a>
+  						</div>
+					</div>
+            	   
+					
+				</div>
+				
+        <% }); %> 
+	</div>
+	
+   
+</div>
+<center>
+			<%- include("partials/footer"); -%>									  
+</center>

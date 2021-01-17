@@ -1,0 +1,92 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+	 <div class="row" style="display:flex; flex-wrap:wrap;">
+													   		
+            	<div class="col md-3 col sm-6" style= "padding:3rem">
+            	    <div class="thumbnail">
+						<center>
+            	            <img src="<%= customerz.image %>" style="height: 30rem;">
+						</center>  
+            	    </div>
+            	    <div class="caption" style="padding-top: 2rem;">
+						<center>
+            	            <h3><%= customerz.name %></h3>
+						</center>
+            	    </div>
+					<div style="padding-top: 2rem;">
+						<center>
+							<p>
+								<%= customerz.desc %>
+							</p>
+						</center>
+					</div>
+					<div style="padding-top: 2rem;">
+						<center>
+							<h4>
+								balance = 
+								<%= customerz.balance %>
+										rs
+                            </h4>
+
+                            <div class="container" style="background-color: rgb(178, 255, 122); padding-left: 2rem;">
+                                <div>
+                                    <div class="row">
+                                        <div style = "padding-top: 3rem;">
+                                            <h1>transfer your money to anyone!</h1>
+                                        </div>
+                                    
+                                    <div style=" display:block; width:30%; margin: 0 auto" >
+                                
+                                    <form  action="/?_method=PUT"  method ="POST">
+                                        <div class="form-group" style = "margin-top: 2rem;">
+                                            <input class="form-control" type="text" name="yid" value="<%=customerz.id%>" style="visibility: hidden;">
+                                        </div>
+                                        <div class="form-group" style = "margin-top: 2rem;">
+                                            <input class="form-control" type="text" name="tid" placeholder="id">
+                                        </div>
+                                        <div class="form-group" style = "margin-top: 2rem;">
+                                            <input class="form-control" type="text" name="tname" placeholder="name">
+                                        </div>
+                                        <div class="form-group" style = "margin-top: 2rem;">
+                                            <input class="form-control" type="number" name="name" value="<%=customerz.name%>" style="visibility: hidden;">
+                                        </div>
+                                        <div class="form-group" style = "margin-top: 2rem;">
+                                            <input class="form-control" type="text" name="image" value="<%=customerz.image%>" style="visibility: hidden;">
+                                        </div>
+                                        <div class="form-group" style = "margin-top: 2rem;">
+                                            <input class="form-control" type="text" name="desc" value="<%=customerz.desc%>" style="visibility: hidden;">
+                                        </div>
+                                        <div class="form-group" style = "margin-top: 2rem;">
+                                            <input class="form-control" type="number" name="balance" value="<%=customerz.balance%>" style="visibility: hidden;">
+                                        </div>
+
+                                        
+                                        <div class="form-group">
+                                            <input class="form-control" type="number" name="transfer" placeholder="amount">
+                                        </div>
+                                        <div class="form-group"> 
+                                        <button class="btn btn-lg btn-success btn-block">transfer</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                </div>
+                        
+                            
+                                </div>
+                                    <a href="/allcustomers">Go back</a>
+                                </div>
+                            </div> 
+
+
+
+            
+						</center>	
+					</div>	
+            	</div>
+    </div> 
+</div>	
+
+<center>
+	<%- include("partials/footer"); -%>	
+</center>

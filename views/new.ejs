@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+    <div class="container">
+    <div class="row">
+        <div style = "padding-top: 5rem;">
+            <h1>Welcome! new user</h1>
+        </div>
+	
+    <div style=" display:block; width:30%; margin: 0 auto" >
+
+    <form  action="/allcustomers"  method ="POST">
+        <div class="form-group">
+        <input class="form-control" type="text" name="name" placeholder="name">
+        </div>
+        <div class="form-group">
+        <input class="form-control" type="text" name="image" placeholder="image url">
+        </div>
+		<div class="form-group">
+        <input class="form-control" type="text" name="desc" placeholder="description">
+        </div>
+		<div class="form-group">
+        <input class="form-control" type="number" name="balance" placeholder="balance">
+        </div>
+        <div class="form-group"> 
+        <button class="btn btn-lg btn-warning btn-block">Submit</button>
+        </div>
+    </form>
+    </div>
+    <a href="/allcustomers">Go back</a>
+    </div>
+    </div> 
