@@ -2,7 +2,7 @@ var express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/bank1', {useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connect('your db link', {useNewUrlParser: true, useUnifiedTopology: true});
 const methodOverride = require("method-override");
 
 app.use(methodOverride('_method'));
@@ -22,25 +22,6 @@ const customerSchema = new mongoose.Schema({
 
 let Customer = mongoose.model('Customer',customerSchema);
 
-/*Customer.insertMany(
-    [
-        {id: 1,  name:"Adam" , image :"https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" , desc :"Docor at a pretigeous Hospital in NewYork,Newyork.Earns around 2000000 per annum. No debts. Owns around 10 acres center of NY city" , balance : 200000},
-        {id: 2,  name:"Eve" , image :"https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fHBlcnNvbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" , desc :"Docor at a pretigeous Hospital in NewYork,Newyork.Earns around 2000000 per annum. No debts. Owns around 10 acres center of NY city" , balance : 200000},
-        {id: 3,  name:"Dave" , image :"https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlcnNvbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",  desc :"Docor at a pretigeous Hospital in NewYork,Newyork.Earns around 2000000 per annum. No debts. Owns around 10 acres center of NY city" , balance : 200000},
-        {id: 4,  name:"barbatov" , image :"https://images.unsplash.com/photo-1552058544-f2b08422138a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",  desc :"Docor at a pretigeous Hospital in NewYork,Newyork.Earns around 2000000 per annum. No debts. Owns around 10 acres center of NY city" , balance : 200000}
-        
-    ]
-)*/
-
-
-
-/*const customers = [
-    {id: 1,  name:"Adam" , image :"https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" , desc :"Docor at a pretigeous Hospital in NewYork,Newyork.Earns around 2000000 per annum. No debts. Owns around 10 acres center of NY city" , balance : 200000},
-    {id: 2,  name:"Eve" , image :"https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fHBlcnNvbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" , desc :"Docor at a pretigeous Hospital in NewYork,Newyork.Earns around 2000000 per annum. No debts. Owns around 10 acres center of NY city" , balance : 200000},
-	{id: 3,  name:"Dave" , image :"https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlcnNvbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",  desc :"Docor at a pretigeous Hospital in NewYork,Newyork.Earns around 2000000 per annum. No debts. Owns around 10 acres center of NY city" , balance : 200000},
-    {id: 4,  name:"barbatov" , image :"https://images.unsplash.com/photo-1552058544-f2b08422138a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",  desc :"Docor at a pretigeous Hospital in NewYork,Newyork.Earns around 2000000 per annum. No debts. Owns around 10 acres center of NY city" , balance : 200000}
-	
-]*/
 
 mongoose.set('useFindAndModify', false);
 
